@@ -342,7 +342,7 @@ class Font_Binary_Stream {
           
           $ret = 0;
           for($i = 0; $i < $type[1]; $i++) {
-            $value = count($data) < $i ? $data[$i] : 0;
+            $value = $i < count($data) ? $data[$i] : 0;
             $ret += $this->w($type[0], $value);
           }
           return $ret;
